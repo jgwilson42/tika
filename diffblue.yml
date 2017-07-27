@@ -1,2 +1,18 @@
 buildCmd: mvn compile
 testCmd: mvn test
+cbmcArguments:
+    java-max-vla-length: 16
+    depth: 1024
+    unwind: 8
+    string-max-length: 16
+    classpath: '/tools/cbmc/models.jar:/diffblue-workspace/version-new/tika-app/target/classes:/diffblue-workspace/version-new/tika-bundle/target/classes:/diffblue-workspace/version-new/tika-dotnet/target/classes:/diffblue-workspace/version-new/tika-java7/target/classes:/diffblue-workspace/version-new/tika-parent/target/classes:/diffblue-workspace/version-new/tika-serialization/target/classes:/diffblue-workspace/version-new/tika-translate/target/classes:/diffblue-workspace/version-new/tika-batch/target/classes:/diffblue-workspace/version-new/tika-core/target/classes:/diffblue-workspace/version-new/tika-example/target/classes:/diffblue-workspace/version-new/tika-langdetect/target/classes:/diffblue-workspace/version-new/tika-parsers/target/classes:/diffblue-workspace/version-new/tika-server/target/classes:/diffblue-workspace/version-new/tika-xmp/target/classes:.'
+    java-unwind-enum-static: true
+    cover-traces-must-terminate: true
+    java-max-input-array-length: 32
+units:
+  - target:
+      - sourceDir: tika-batch/src/main/java
+        dir: tika-batch/target/classes
+        file: org/apache/tika/batch/AutoDetectParserFactory.class
+    libs: []
+    context: []
