@@ -10,9 +10,12 @@ cbmcArguments:
     cover-traces-must-terminate: true
     java-max-input-array-length: 32
 units:
-  - target:
-      - sourceDir: tika-batch/src/main/java
-        dir: tika-batch/target/classes
-        file: org/apache/tika/batch/AutoDetectParserFactory.class
-    libs: []
-    context: []
+- target:
+    - sourceDir: tika-batch/src/main/java
+      dir: tika-batch/target/classes
+      file: org/apache/tika/batch/fs/FSDocumentSelector.class
+    - sourceDir: tika-batch/src/main/java
+      dir: tika-batch/target/classes
+      file: org/apache/tika/batch/fs/builders/FSCrawlerBuilder.class
+  libs: []
+  context: []
